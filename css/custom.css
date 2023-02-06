@@ -1,0 +1,26 @@
+/* ҳ����ͷͼ͸�� */
+#footer {
+	background: transparent !important;
+}
+
+#page-header {
+	background: transparent !important;
+}
+
+/* ����ģʽ����͸�� */
+#footer::before {
+	background: transparent !important;
+}
+
+#page-header::before {
+	background: transparent !important;
+}
+
+/* ҹ��ģʽ����͸�� */
+[data-theme="dark"] #footer::before {
+	background: transparent !important;
+}
+
+[data-theme="dark"] #page-header::before {
+	background: transparent !important;
+}
