@@ -24,3 +24,24 @@
 [data-theme="dark"] #page-header::before {
 	background: transparent !important;
 }
+
+/* ҹ��ģʽ�˵��������� */
+[data-theme="dark"] #nav .site-page,
+[data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
+	text-shadow: 0 0 2px var(--theme-color) !important;
+}
+
+/* �ֻ������� */
+[data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {
+	text-shadow: 0 0 2px var(--theme-color) !important;
+}
+
+/* ��˸�䶯��ɫ�������� */
+#site-name,
+#site-title,
+#site-subtitle,
+#post-info,
+.author-info__name,
+.author-info__description {
+	transition: text-shadow 1s linear !important;
+}
