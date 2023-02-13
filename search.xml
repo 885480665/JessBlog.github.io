@@ -36,6 +36,25 @@
     
     
     <entry>
+      <title>OpenWRT中安装软件</title>
+      <link href="/2022/12/30/OpenWRT%E4%B8%AD%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/"/>
+      <url>/2022/12/30/OpenWRT%E4%B8%AD%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>1、更新OpenWRT软件包列表</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br></pre></td></tr></table></figure><p>2、查询可安装的软件包列表</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg list</span><br></pre></td></tr></table></figure><p>3、搜索列表里是否有此插件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg list|grep 插件名字</span><br></pre></td></tr></table></figure><p>4、在线安装插件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg install 插件名字</span><br></pre></td></tr></table></figure><h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>1、尽量安装英文版本的插件，中文版本有时会出现乱码</p><p>2、需要使用梯子</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> OpenWRT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树莓派远程卡顿问题</title>
       <link href="/2022/12/29/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BF%9C%E7%A8%8B%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/"/>
       <url>/2022/12/29/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BF%9C%E7%A8%8B%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/</url>
