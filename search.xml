@@ -56,19 +56,6 @@
     
     
     <entry>
-      <title>啥啥啥</title>
-      <link href="/2022/12/27/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2022/12/27/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="是对厚非呕吐"><a href="#是对厚非呕吐" class="headerlink" title="是对厚非呕吐"></a>是对厚非呕吐</h2><p>ghrd 二<br>儿童<br>儿童<br>ert ert re他er<br>二teer eryryuthj发过火<br>rty drt<br>与<br>drt rty rty<br>rtyy rtrt一rt一</p><p> rty rt一rt羊肉汤<br> ywr </p><p>  gf </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>弟子规</title>
       <link href="/2022/12/27/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2022/12/27/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
@@ -82,11 +69,24 @@
     
     
     <entry>
-      <title>ESXI 无法打开虚拟机电源，对象类型需要托管的IO</title>
+      <title>啥啥啥</title>
+      <link href="/2022/12/27/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2022/12/27/%E7%AC%AC%E5%9B%9B%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="是对厚非呕吐"><a href="#是对厚非呕吐" class="headerlink" title="是对厚非呕吐"></a>是对厚非呕吐</h2><p>ghrd 二<br>儿童<br>儿童<br>ert ert re他er<br>二teer eryryuthj发过火<br>rty drt<br>与<br>drt rty rty<br>rtyy rtrt一rt一</p><p> rty rt一rt羊肉汤<br> ywr </p><p>  gf </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ESXI无法打开虚拟机电源，对象类型需要托管的IO</title>
       <link href="/2022/12/27/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/"/>
       <url>/2022/12/27/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/</url>
       
-        <content type="html"><![CDATA[<p>如果你的ESXI里面的虚拟机不能开机，提示无法打开虚拟机电源， 对象类型需要托管的I&#x2F;O，那么按照以下方法操作即可解决。</p><h2 id="一、开启ESXI的SSH功能"><a href="#一、开启ESXI的SSH功能" class="headerlink" title="一、开启ESXI的SSH功能"></a>一、开启ESXI的SSH功能</h2><p><img src="/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/1.webp" alt="1"></p><h2 id="二、点击事务提示找到路径"><a href="#二、点击事务提示找到路径" class="headerlink" title="二、点击事务提示找到路径"></a>二、点击事务提示找到路径</h2><p><img src="/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/2.webp" alt="2"><br><img src="/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/3.webp" alt="3"></p><h2 id="三、登陆SSH输入命令"><a href="#三、登陆SSH输入命令" class="headerlink" title="三、登陆SSH输入命令"></a>三、登陆SSH输入命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vmkfstools -x check 路径</span></span><br></pre></td></tr></table></figure><h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vmkfstools -x check /vmfs/volumes/5d582a2a-40abb997-8ffd-e43a6e0448e3/LEDE/openwrt-x86-64-combined-squashfs.vmdk (里面的地址修改为你错误信息里面的地址)</span></span><br></pre></td></tr></table></figure><p><img src="/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/4.webp" alt="4"></p><p>如果提示“Disk needs repair.”在输入以下命令修复即可重新开启:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vmkfstools -x repair 路径</span></span><br></pre></td></tr></table></figure><h3 id="例子：-1"><a href="#例子：-1" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -x repair /vmfs/volumes/5d582a2a-40abb997-8ffd-e43a6e0448e3/LEDE/openwrt-x86-64-combined-squashfs.vmdk (里面的地址修改为你错误信息里面的地址)</span><br></pre></td></tr></table></figure><p><img src="/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/5.webp" alt="5"></p><p>完成后后提示“Disk was successfully repaired.”</p>]]></content>
+        <content type="html"><![CDATA[<p>如果你的ESXI里面的虚拟机不能开机，提示无法打开虚拟机电源， 对象类型需要托管的I&#x2F;O，那么按照以下方法操作即可解决。</p><h2 id="一、开启ESXI的SSH功能"><a href="#一、开启ESXI的SSH功能" class="headerlink" title="一、开启ESXI的SSH功能"></a>一、开启ESXI的SSH功能</h2><p><img src="ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/1.webp" alt="1"><br><img src="https://https//s1.ax1x.com/2023/02/13/pSo1fH0.png" alt="1"></p><h2 id="二、点击事务提示找到路径"><a href="#二、点击事务提示找到路径" class="headerlink" title="二、点击事务提示找到路径"></a>二、点击事务提示找到路径</h2><p><img src="ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/2.webp" alt="2"><br><img src="ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/3.webp" alt="3"></p><h2 id="三、登陆SSH输入命令"><a href="#三、登陆SSH输入命令" class="headerlink" title="三、登陆SSH输入命令"></a>三、登陆SSH输入命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vmkfstools -x check 路径</span></span><br></pre></td></tr></table></figure><h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vmkfstools -x check /vmfs/volumes/5d582a2a-40abb997-8ffd-e43a6e0448e3/LEDE/openwrt-x86-64-combined-squashfs.vmdk (里面的地址修改为你错误信息里面的地址)</span></span><br></pre></td></tr></table></figure><p><img src="ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/4.webp" alt="4"></p><p>如果提示“Disk needs repair.”在输入以下命令修复即可重新开启:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vmkfstools -x repair 路径</span></span><br></pre></td></tr></table></figure><h3 id="例子：-1"><a href="#例子：-1" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -x repair /vmfs/volumes/5d582a2a-40abb997-8ffd-e43a6e0448e3/LEDE/openwrt-x86-64-combined-squashfs.vmdk (里面的地址修改为你错误信息里面的地址)</span><br></pre></td></tr></table></figure><p><img src="ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/5.webp" alt="5"></p><p>完成后后提示“Disk was successfully repaired.”</p>]]></content>
       
       
       
