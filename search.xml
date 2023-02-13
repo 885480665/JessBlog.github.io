@@ -36,6 +36,25 @@
     
     
     <entry>
+      <title>树莓派远程卡顿问题</title>
+      <link href="/2022/12/29/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BF%9C%E7%A8%8B%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/12/29/%E6%A0%91%E8%8E%93%E6%B4%BE%E8%BF%9C%E7%A8%8B%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>树莓派内存要用于Broadcom BCM2837上的CPU和GPU，因此要合理分配内存。</p><h2 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h2><p>1、系统设置：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo raspi-config</span><br></pre></td></tr></table></figure><p>2、性能选项：Performance Options</p><p>3、GPU内存：GPU Memory</p><p>4、分配合理的GPU显存(单位M),建议512M左右就不会卡顿</p><p>5、保存–退出</p><p>6、重启：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Raspberry Pi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ESXI无法打开虚拟机电源，对象类型需要托管的IO</title>
       <link href="/2022/12/27/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/"/>
       <url>/2022/12/27/ESXI%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%94%B5%E6%BA%90%EF%BC%8C%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E9%9C%80%E8%A6%81%E6%89%98%E7%AE%A1%E7%9A%84IO/</url>
