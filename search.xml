@@ -36,6 +36,25 @@
     
     
     <entry>
+      <title>Ubuntu Server 22.04安装配置</title>
+      <link href="/2023/01/01/UbuntuServer22-04%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+      <url>/2023/01/01/UbuntuServer22-04%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<p>1、加载虚拟光盘，准备好安装硬件配置</p><p>2、语言设置默认English回车即可</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OpenWRT中安装软件</title>
       <link href="/2022/12/30/OpenWRT%E4%B8%AD%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/"/>
       <url>/2022/12/30/OpenWRT%E4%B8%AD%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</url>
