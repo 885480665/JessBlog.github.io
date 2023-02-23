@@ -61,6 +61,25 @@
     
     
     <entry>
+      <title>Docker简介</title>
+      <link href="/2023/02/07/Docker%E7%AE%80%E4%BB%8B/"/>
+      <url>/2023/02/07/Docker%E7%AE%80%E4%BB%8B/</url>
+      
+        <content type="html"><![CDATA[<p>Docker解决了运行环境和配置问题的软件容器，方便做持续集成并有助于整体发布的容器虚拟化技术。</p><h2 id="VMware与Docker的区别："><a href="#VMware与Docker的区别：" class="headerlink" title="VMware与Docker的区别："></a>VMware与Docker的区别：</h2><ul><li><p>传统的虚拟机技术是虚拟出一套硬件后，在其上运行一个完整的操作系统，在该系统上再运行所需应用进程。</p></li><li><p>容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核且没有进行硬件虚拟。因此容器要比传统虚拟机更轻便。</p></li><li><p>每个容器之间相互隔离，每个容器有自己的文件系统，容器之间进程不会相互影响，能区分计算资源。</p></li></ul><h2 id="为什么Docker比虚拟机快"><a href="#为什么Docker比虚拟机快" class="headerlink" title="为什么Docker比虚拟机快:"></a>为什么Docker比虚拟机快:</h2><ul><li>Docker有着比虚拟机更少的抽象层</li><li>Docker利用的是宿主机的内核，而不需要加载操作系统OS内核</li></ul><p><img src="https://s1.ax1x.com/2023/02/23/pSxDuLD.png" alt="1"></p><table><thead><tr><th align="center"></th><th align="center">Docker容器</th><th align="center">VMware虚拟机</th></tr></thead><tbody><tr><td align="center">操作系统</td><td align="center">与宿主机共享OS</td><td align="center">宿主机OS上运行虚拟机OS</td></tr><tr><td align="center">存储大小</td><td align="center">镜像小，便于存储与传输</td><td align="center">镜像庞大（vmdk、vdi等）</td></tr><tr><td align="center">运行性能</td><td align="center">几乎无额外性能损失</td><td align="center">操作系统额外的CPU、内存消耗大</td></tr><tr><td align="center">移植性</td><td align="center">轻便、灵活、适应于Linux</td><td align="center">笨重、与虚拟化技术耦合度高</td></tr><tr><td align="center">硬件亲和性</td><td align="center">面向软件开发者</td><td align="center">面向硬件运维者</td></tr><tr><td align="center">部署速度</td><td align="center">快速、秒级</td><td align="center">较慢，10s以上</td></tr></tbody></table><h2 id="Docker的基本组成："><a href="#Docker的基本组成：" class="headerlink" title="Docker的基本组成："></a>Docker的基本组成：</h2><ul><li><p>镜像（image）</p></li><li><p>容器（Container）</p></li><li><p>仓库（Repository）</p></li></ul><h3 id="镜像（image）"><a href="#镜像（image）" class="headerlink" title="镜像（image）"></a>镜像（image）</h3><p>一个只读模板。镜像可以用来创建Docker容器，一个镜像可以创建很多的容器。相当于是一个root文件系统。<br>如：官方镜像CentOS 7就包含了一套完整的CentOS 7最小的系统文件root文件系统。相当于容器的“源代码”。<br>容器与镜像的关系类似于面向对象编程中的对象与类。</p><table><thead><tr><th align="center">Docker</th><th align="center">面向对象</th></tr></thead><tbody><tr><td align="center">容器</td><td align="center">对象</td></tr><tr><td align="center">镜像</td><td align="center">类</td></tr></tbody></table><h3 id="容器（Container）"><a href="#容器（Container）" class="headerlink" title="容器（Container）"></a>容器（Container）</h3><ul><li><p>从面向对象角度：<br>Docker利用容器独立运行的一个或一组应用，应用程序或服务运行在容器里面，容器就类似于一个虚拟化的运行环境。容器是用镜像创建的运行实例；。就像是Java中的类和实例对象一样，竟像是静态的定义，容器是竞相运行的实体。容器为镜像提供了一个标准的和隔离的运行环境，他可以被启动、开始、停止、删除。每个容易都是相互隔离的、保证安全的平台。</p></li><li><ul><li>从镜像容器角度<br>可以把容器看做是一个简易版的Linux环境（包括root用户权限、进程空间、用户空间和网络空间等）和运行在其中的应用程序。</li></ul></li></ul><h3 id="仓库（Repository）："><a href="#仓库（Repository）：" class="headerlink" title="仓库（Repository）："></a>仓库（Repository）：</h3><p>是集中存放镜像文件的场所。</p><p>类似于：</p><ul><li><p>Maven仓库，存放各种iar报的地方；</p></li><li><p>Github仓库，存放各种git项目的地方；</p></li><li><p>Docker公司提供的仓库（Public）和私有仓库（Private）两种形式。</p></li></ul><p>最大的公开仓库 Docker Hub（ <a href="https://hub.docker.com/">https://hub.docker.com/</a> ），国内公开仓库：阿里云、网易云等</p><h3 id="仓库、镜像、容器的概念："><a href="#仓库、镜像、容器的概念：" class="headerlink" title="仓库、镜像、容器的概念："></a>仓库、镜像、容器的概念：</h3><ul><li><p>Docker本身是一个容器运行载体或称之为管理引擎。我们把应用程序和配置依赖打包好形成一个可交付的运行环境，这个打包好的运行环境就是Image镜像文件。只通过这个镜像文件才能生成Docker容器实例（类似Java中new除开一个对象）。</p></li><li><p>Image文件可以看做是容器的模板。Docker根据Image文件生成容器的实力。同一个Image文件可以生成多个运行的容器实例。</p></li></ul><h4 id="镜像文件："><a href="#镜像文件：" class="headerlink" title="镜像文件："></a>镜像文件：</h4><p>Image文件生成的容器实例，本身也是一个文件，称为镜像文件。</p><h4 id="容器实例："><a href="#容器实例：" class="headerlink" title="容器实例："></a>容器实例：</h4><p>一个容器运行一种服务，当我们需要的时候可以通过Docker客服端创建一个对应的实例。</p><h4 id="仓库："><a href="#仓库：" class="headerlink" title="仓库："></a>仓库：</h4><p>放一堆镜像的地方，可以把镜像发布在仓库中，需要的时候再从仓库中拉下来。</p><h3 id="Docker工作原理、架构以及通信"><a href="#Docker工作原理、架构以及通信" class="headerlink" title="Docker工作原理、架构以及通信"></a>Docker工作原理、架构以及通信</h3><h4 id="Docker工作原理"><a href="#Docker工作原理" class="headerlink" title="Docker工作原理"></a>Docker工作原理</h4><p><img src="https://s1.ax1x.com/2023/02/23/pSxW6pQ.png" alt="2"></p><h4 id="run干了什么"><a href="#run干了什么" class="headerlink" title="run干了什么"></a>run干了什么</h4><p><img src="https://s1.ax1x.com/2023/02/23/pSxWsfg.png" alt="3"></p><h4 id="Docker整体架构以及底层通信原理"><a href="#Docker整体架构以及底层通信原理" class="headerlink" title="Docker整体架构以及底层通信原理"></a>Docker整体架构以及底层通信原理</h4><p><img src="https://s1.ax1x.com/2023/02/23/pSxWclj.png" alt="4"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Maerkdown语法/图标</title>
       <link href="/2023/01/20/Maerkdown%E8%AF%AD%E6%B3%95-%E5%9B%BE%E6%A0%87/"/>
       <url>/2023/01/20/Maerkdown%E8%AF%AD%E6%B3%95-%E5%9B%BE%E6%A0%87/</url>
