@@ -64,6 +64,10 @@
 		top: 0;
 	}
 
+:root {
+	--ichika-color: #49A6E9;
+}
+
 /* ��ӭ��Ϣ */
 #welcome-info {
 	background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
