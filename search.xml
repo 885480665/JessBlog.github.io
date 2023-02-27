@@ -24,12 +24,18 @@
     
     <entry>
       <title>Linux安装Docker</title>
-      <link href="/2023/02/24/Linux%E5%AE%89%E8%A3%85Docker/"/>
-      <url>/2023/02/24/Linux%E5%AE%89%E8%A3%85Docker/</url>
+      <link href="/2023/02/13/Linux%E5%AE%89%E8%A3%85Docker/"/>
+      <url>/2023/02/13/Linux%E5%AE%89%E8%A3%85Docker/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>本教程基于官网教程整理：<br>操作系统要求</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
       
     </entry>
     
