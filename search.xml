@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>MinIO环境搭建</title>
+      <link href="/2023/02/21/MinIO%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <url>/2023/02/21/MinIO%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>官方文档：<a href="https://docs.min.io/docs/">https://docs.min.io/docs/</a><br>中文文档：<a href="http://docs.minio.org.cn/docs/">http://docs.minio.org.cn/docs/</a> （没有及时更新，容易被坑）</p></blockquote><p>MinIO支持多种Server启动模式：</p><p><img src="https://s1.ax1x.com/2023/02/28/ppPlcoq.jpg" alt="1"></p><h2 id="单机部署"><a href="#单机部署" class="headerlink" title="单机部署"></a>单机部署</h2><p>minio server的standalone模式，即要管理的磁盘都在host本地。该启动模式一般仅用于实验环境、测试环境的验证和学习使用。在standalone模式下，还可以分为<code>non-erasure code mode</code>和<code>erasurecode mode</code>。</p><ul><li><p>non-erasure code mode</p></li><li><p>在此启动模式下，对于每一份对象数据，minio直接在data下面存储这份数据，不会建立副本，也不会启用纠删码机制。因此，这种模式无论是服务实例还是磁盘都是“单点”，无任何高可用保障，磁盘损坏就表示数据丢失。</p></li><li><p>erasure code mode<br>此模式为minio server实例传入多个本地磁盘参数。一旦遇到多于一个磁盘参数，minio server会自动启用erasure code mode。erasure code对磁盘的个数是有要求的，如不满足要求，实例启动将失败。 erasure code启用后，要求传给minio server的endpoint(standalone模式下，即本地磁盘上的目录)至少为4个。</p></li></ul><h3 id="基于CentOS7"><a href="#基于CentOS7" class="headerlink" title="基于CentOS7"></a>基于CentOS7</h3><p>未完成………………………………………………………………..</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MinIO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MinIO简介</title>
       <link href="/2023/02/20/MinIO%E7%AE%80%E4%BB%8B/"/>
       <url>/2023/02/20/MinIO%E7%AE%80%E4%BB%8B/</url>
