@@ -4,17 +4,17 @@
   
     
     <entry>
-      <title>树莓派安装SSH</title>
-      <link href="/22022/12/27/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85SSH/"/>
-      <url>/22022/12/27/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85SSH/</url>
+      <title>MinIO简介</title>
+      <link href="/2023/02/20/MinIO%E7%AE%80%E4%BB%8B/"/>
+      <url>/2023/02/20/MinIO%E7%AE%80%E4%BB%8B/</url>
       
-        <content type="html"><![CDATA[<p>SSH 在树莓派上是默认关闭的，因此在你安装好全新的 Raspbian 后打开树莓派时，你需要启用它。</p><h2 id="一、方法一：（图形界面）"><a href="#一、方法一：（图形界面）" class="headerlink" title="一、方法一：（图形界面）"></a>一、方法一：（图形界面）</h2><p>1、通过菜单进入树莓派的配置界面。<br><img src="https://s1.ax1x.com/2023/02/13/pSo8wY8.png" alt="1"></p><p>2、进入接口（interfaces）标签，启动 SSH并重启你的树莓派</p><p><img src="https://s1.ax1x.com/2023/02/13/pSo80fS.png" alt="2"></p><h2 id="方法二：（命令行）"><a href="#方法二：（命令行）" class="headerlink" title="方法二：（命令行）"></a>方法二：（命令行）</h2><p>1、打开SSH功能(图形化界面系统)：<br>2、打开终端敲入命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo raspi-config</span><br></pre></td></tr></table></figure><p>3、选择：Interfacing Options<br>4、找到SSH(对其进行enable操作)</p><h2 id="方法三：（命令行）"><a href="#方法三：（命令行）" class="headerlink" title="方法三：（命令行）"></a>方法三：（命令行）</h2><p>安装openssh-server</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure><p>卸载openssh-server</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove openssh-server</span><br></pre></td></tr></table></figure><p>判断SSH是否运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ax</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/02/13/pSo8dFf.png" alt="3"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="分布式文件系统应用场景"><a href="#分布式文件系统应用场景" class="headerlink" title="分布式文件系统应用场景"></a>分布式文件系统应用场景</h2><p>互联网海量非结构化数据的存储需求</p><ul><li>电商网站：海量商品图片</li><li>视频网站：海量视频文件</li><li>网盘 : 海量文件</li><li>社交网站：海量图片</li></ul><h2 id="MinIO介绍"><a href="#MinIO介绍" class="headerlink" title="MinIO介绍"></a>MinIO介绍</h2><p>MinIO 是一个基于Apache License v2.0开源协议的对象存储服务。它兼容亚马逊S3云存储服务接口，非常适合于存储大容量非结构化的数据，例如图片、视频、日志文件、备份数据和容器&#x2F;虚拟机镜像等，而一个对象文件可以是任意大小，从几kb到最大5T不等。</p><p>MinIO是一个非常轻量的服务,可以很简单的和其他应用的结合，类似 NodeJS, Redis 或者 MySQL。</p><p><img src="https://s1.ax1x.com/2023/02/28/ppPK5yd.png" alt="1"></p><p>官网: <a href="https://min.io/">https://min.io/</a></p><blockquote><p>对象存储服务（Object Storage Service，OSS）是一种海量、安全、低成本、高可靠的云存储服务，适合存放任意类型的文件。容量和处理能力弹性扩展，多种存储类型供选择，全面优化存储成本。</p></blockquote><p>对于中小型企业，如果不选择存储上云，那么 Minio 是个不错的选择，麻雀虽小，五脏俱全。当然Minio 除了直接作为对象存储使用，还可以作为云上对象存储服务的网关层，无缝对接到 Amazon S3、MicroSoft Azure。</p><p>在中国：阿里巴巴、腾讯、百度、中国联通、华为、中国移动等等9000多家企业也都在使用MinIO产品。</p><h3 id="MinIO优点"><a href="#MinIO优点" class="headerlink" title="MinIO优点"></a>MinIO优点</h3><ul><li>部署简单: 一个single二进制文件即是一切，还可支持各种平台。</li><li>minio支持海量存储，可按zone扩展(原zone不受任何影响)，支持单个对象最大5TB;</li><li>兼容Amazon S3接口，充分考虑开发人员的需求和体验;</li><li>低冗余且磁盘损坏高容忍，标准且最高的数据冗余系数为2(即存储一个1M的数据对象，实际占用磁盘空间为2M)。但在任意n&#x2F;2块disk损坏的情况下依然可以读出数据(n为一个纠删码集合(ErasureCoding Set)中的disk数量)。并且这种损坏恢复是基于单个对象的，而不是基于整个存储卷的。</li><li>读写性能优异</li></ul><p><img src="https://s1.ax1x.com/2023/02/28/ppPMU0I.jpg" alt="2"></p><h2 id="MinIO的基础概念"><a href="#MinIO的基础概念" class="headerlink" title="MinIO的基础概念"></a>MinIO的基础概念</h2><ul><li>Object：存储到 Minio 的基本对象，如文件、字节流，Anything…</li><li>Bucket：用来存储 Object 的逻辑空间。每个 Bucket 之间的数据是相互隔离的。对于客户端而言，就相当于一个存放文件的顶层文件夹。</li><li>Drive：即存储数据的磁盘，在 MinIO 启动时，以参数的方式传入。Minio 中所有的对象数据都会存储在 Drive 里。</li><li>Set ：即一组 Drive 的集合，分布式部署根据集群规模自动划分一个或多个 Set ，每个 Set 中的Drive 分布在不同位置。一个对象存储在一个 Set 上。（For example: {1…64} is divided into 4sets each of size 16.）<ul><li>一个对象存储在一个Set上</li><li>一个集群划分为多个Set</li><li>一个Set包含的Drive数量是固定的，默认由系统根据集群规模自动计算得出</li><li>一个SET中的Drive尽可能分布在不同的节点上</li></ul></li></ul><h2 id="纠错码EC（Erasure-Code）"><a href="#纠错码EC（Erasure-Code）" class="headerlink" title="纠错码EC（Erasure Code）"></a>纠错码EC（Erasure Code）</h2><p>MinIO 使用纠删码机制来保证高可靠性，使用 highwayhash 来处理数据损坏（ Bit Rot Protection ）。关于纠删码，简单来说就是可以通过数学计算，把丢失的数据进行还原，它可以将n份原始数据，增加m份数据，并能通过n+m份中的任意n份数据，还原为原始数据。即如果有任意小于等于m份的数据失效，仍然能通过剩下的数据还原出来。</p><h2 id="存储形式"><a href="#存储形式" class="headerlink" title="存储形式"></a>存储形式</h2><p>文件对象上传到 MinIO ，会在对应的数据存储磁盘中，以 Bucket 名称为目录，文件名称为下一级目录，文件名下是 part.1 和 xl.meta(老版本，最新版本如下图)，前者是编码数据块及检验块，后者是元数据文件。</p><p><img src="https://s1.ax1x.com/2023/02/28/ppPMNnA.jpg" alt="3"></p><h2 id="存储方案"><a href="#存储方案" class="headerlink" title="存储方案"></a>存储方案</h2><p><img src="https://s1.ax1x.com/2023/02/28/ppPMycQ.jpg" alt="4"></p>]]></content>
       
       
       
         <tags>
             
-            <tag> Raspberry Pi </tag>
+            <tag> Minio </tag>
             
         </tags>
       
@@ -167,6 +167,25 @@
         <tags>
             
             <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>树莓派安装SSH</title>
+      <link href="/2022/12/30/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85SSH/"/>
+      <url>/2022/12/30/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85SSH/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>SSH 在树莓派上是默认关闭的，因此在你安装好全新的 Raspbian 后打开树莓派时，你需要启用它。</p></blockquote><h2 id="一、方法一：（图形界面）"><a href="#一、方法一：（图形界面）" class="headerlink" title="一、方法一：（图形界面）"></a>一、方法一：（图形界面）</h2><p>1、通过菜单进入树莓派的配置界面。</p><p><img src="https://s1.ax1x.com/2023/02/13/pSo8wY8.png" alt="1"></p><p>2、进入接口（interfaces）标签，启动 SSH并重启你的树莓派</p><p><img src="https://s1.ax1x.com/2023/02/13/pSo80fS.png" alt="2"></p><h2 id="方法二：（命令行）"><a href="#方法二：（命令行）" class="headerlink" title="方法二：（命令行）"></a>方法二：（命令行）</h2><p>1、打开SSH功能(图形化界面系统)：<br>2、打开终端敲入命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo raspi-config</span><br></pre></td></tr></table></figure><p>3、选择：Interfacing Options<br>4、找到SSH(对其进行enable操作)</p><h2 id="方法三：（命令行）"><a href="#方法三：（命令行）" class="headerlink" title="方法三：（命令行）"></a>方法三：（命令行）</h2><p>安装openssh-server</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure><p>卸载openssh-server</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove openssh-server</span><br></pre></td></tr></table></figure><p>判断SSH是否运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ax</span><br></pre></td></tr></table></figure><p><img src="https://s1.ax1x.com/2023/02/13/pSo8dFf.png" alt="3"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Raspberry Pi </tag>
             
         </tags>
       
