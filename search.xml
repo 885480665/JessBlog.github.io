@@ -23,6 +23,25 @@
     
     
     <entry>
+      <title>Hexo常用命令整理</title>
+      <link href="/2023/03/13/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+      <url>/2023/03/13/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h2><p>​ 为了方便查阅,这里将常用指令汇总。</p><h2 id="简写命令："><a href="#简写命令：" class="headerlink" title="简写命令："></a>简写命令：</h2><table><thead><tr><th align="center">缩写</th><th align="center">全称</th></tr></thead><tbody><tr><td align="center">hexo n “我的第一篇文章”</td><td align="center">hexo new “我的第一篇文章” <br> hexo new post “我的第一篇文章”</td></tr><tr><td align="center">hexo p</td><td align="center">hexo publish</td></tr><tr><td align="center">hexo g</td><td align="center">hexo generate</td></tr><tr><td align="center">hexo s</td><td align="center">hexo server</td></tr><tr><td align="center">hexo d</td><td align="center">hexo deploy</td></tr><tr><td align="center">hexo deploy -g</td><td align="center">hexo deploy –generate</td></tr><tr><td align="center">hexo generate -d</td><td align="center">hexo generate –deploy</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>创建免费图床</title>
       <link href="/2023/03/09/%E5%88%9B%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
       <url>/2023/03/09/%E5%88%9B%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
