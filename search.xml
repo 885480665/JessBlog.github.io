@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>免费领取微软U盘</title>
+      <link href="/2023/03/18/%E5%85%8D%E8%B4%B9%E9%A2%86%E5%8F%96%E5%BE%AE%E8%BD%AFU%E7%9B%98/"/>
+      <url>/2023/03/18/%E5%85%8D%E8%B4%B9%E9%A2%86%E5%8F%96%E5%BE%AE%E8%BD%AFU%E7%9B%98/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>U盘限量送，免费送U盘是几率性的，本人就歪了…</p></blockquote><p>最近微软调整了 Windows 11 测试通道，新增了 “Canary” 通道，这一版本比 Dev 通道更超前，但也更不稳定。根据计划，任何高于 Build 25000 的测试会员都将自动切换到 Canary 通道。</p><p>根据微软的说法，Canary 通道将开始接受内核和 API 都发生重大变化的 Windows 版本，这样的暗示已经非常明显了。目前，Dev 通道已被降级到 Build 23403，Canary 通道则更新到了 25314.1010。</p><p>Canary 通道的出现和特殊性让外界纷纷猜测微软是要内测 Windows 12 开发版。目前，微软还表示，这些测试者可以<code>免费申领一枚 USB 闪存盘</code>，方便进行系统镜像的全新安装。</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>一个Windows电脑</li><li>一个微软账号</li></ul><h2 id="详细步骤："><a href="#详细步骤：" class="headerlink" title="详细步骤："></a>详细步骤：</h2><p>1.打开Windows设置–Windows更新–Windows预览体验计划–加入Windows预览体验计划<code>即刻加入</code>。</p><p><img src="https://s1.ax1x.com/2023/03/21/ppUNUNn.png" alt="1"></p><p>2.登陆自己的微软账号–选择Canary渠道–继续–继续–继续–立即重启。</p><p><img src="https://s1.ax1x.com/2023/03/21/ppUNJBQ.png" alt="2"></p><p><img src="https://s1.ax1x.com/2023/03/21/ppUNahq.png" alt="3"></p><p><img src="https://s1.ax1x.com/2023/03/21/ppUNNAs.png" alt="4"></p><p><img src="https://s1.ax1x.com/2023/03/21/ppUNY7j.png" alt="5"></p><p>3.重启后打开打开Windows设置–Windows更新–检查更新,安装所有更新。</p><p><img src="https://s1.ax1x.com/2023/03/21/ppUgOeI.png" alt="6"></p><p>4.过一段时间微软账号绑定的邮箱会收到邮件，U盘的领取代码是唯一的。<br>领取链接:<code>https://api.mybrandwins.com/forms/api/formio/63c0fb5e8e6d01001af5ba00/validateCode</code></p><p>寄件地址最好是英文的。<br>中文地址翻译成英文地址的写法:<code>https://zhuanlan.zhihu.com/p/77675584</code>。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>创建免费图床</title>
       <link href="/2023/03/09/%E5%88%9B%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/"/>
       <url>/2023/03/09/%E5%88%9B%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
