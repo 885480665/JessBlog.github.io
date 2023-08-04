@@ -68,6 +68,21 @@
 	--ichika-color: #49A6E9;
 }
 
+/* ����&��ӭҳ */
+.card-announcement {
+	line-height: 30px;
+	font-size: 16px;
+}
+
+	.card-announcement .item-headline span {
+		margin-left: 0 !important;
+	}
+
+	.card-announcement span {
+		font-weight: bold;
+		font-size: 20px !important;
+		color: var(--ichika-color);
+	}
 /* ��ӭ��Ϣ */
 #welcome-info {
 	background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
