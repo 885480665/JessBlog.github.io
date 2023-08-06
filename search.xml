@@ -130,11 +130,11 @@
       
         <tags>
             
-            <tag> HomeAssistant </tag>
-            
             <tag> IoT </tag>
             
             <tag> Arduino </tag>
+            
+            <tag> HomeAssistant </tag>
             
         </tags>
       
@@ -172,7 +172,7 @@
       
         <tags>
             
-            <tag> Minio </tag>
+            <tag> MinIO </tag>
             
         </tags>
       
