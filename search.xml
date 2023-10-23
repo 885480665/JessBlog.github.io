@@ -23,6 +23,25 @@
     
     
     <entry>
+      <title>ESXI添加USB外接硬盘作为数据存储</title>
+      <link href="/2023/07/24/ESXI%E6%B7%BB%E5%8A%A0USB%E5%A4%96%E6%8E%A5%E7%A1%AC%E7%9B%98%E4%BD%9C%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/"/>
+      <url>/2023/07/24/ESXI%E6%B7%BB%E5%8A%A0USB%E5%A4%96%E6%8E%A5%E7%A1%AC%E7%9B%98%E4%BD%9C%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>通常在ESXi插上USB外接硬盘，都是映射给虚拟机使用，但是有些情况下我们需要提供给ESXi使用，直接扫描存储是无法扫描到USB硬盘的，需要做如下处理才能被识别。</p></blockquote><p>1、开启主机SSH功能：主机-配置-服务，找到SSH服务，启用；<br>2、先不要插USB硬盘，输入以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/usbarbitrator stop</span><br><span class="line">chkconfig usbarbitrator off</span><br></pre></td></tr></table></figure><p>3、插入USB硬盘，输入以下命令，可以看到有Is USB:true字样，表示USB设备已经识别出来。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">esxcli storage core device list |grep -i usb</span><br></pre></td></tr></table></figure><p><img src="https://picbed.jess.win/img/ESXI%E6%B7%BB%E5%8A%A0USB%E5%A4%96%E6%8E%A5%E7%A1%AC%E7%9B%98%E4%BD%9C%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/1.png" alt="1"></p><p>可以看到设备名为：mpx.vmhba32:C0:T0:L0（注意，每款设备编号都会不同）</p><p>4、输入以下命令，会列出所有的disk，确认一下是否正确识别该设备名。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/disks/</span><br></pre></td></tr></table></figure><p>5、输入以下两条命令，(mpx.vmhba32:C0:T0:L0)这个值换成你上一步获取的那个值,并且在:前面加个,也就变成（mpx.vmhba32:C0:T0:L0）。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">partedUtil mklabel /dev/disks/mpx.vmhba32\:C0\:T0\:L0 gpt</span><br><span class="line">partedUtil getptbl /dev/disks/mpx.vmhba32\:C0\:T0\:L0</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>6、换算硬盘的二进制数值，输入以下命令（mpx.vmhba32:C0:T0:L0）一样的换成你的数值，<code>别忘了在:前面加‘\’</code>，这样就会换算出来我们硬盘的数值，我的是976768064，这个数值每个人的不一样。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="built_in">expr</span> $(partedUtil getptbl /dev/disks/mpx.vmhba32\:C0\:T0\:L0</span><br><span class="line"> | <span class="built_in">tail</span> -1 | awk <span class="string">&#x27;&#123;print $1 &quot; \\* &quot; $2 &quot; \\* &quot; $3&#125;&#x27;</span>) - 1</span><br></pre></td></tr></table></figure><p>7、在输入以下命令来让系统识别我们的硬盘,（mpx.vmhba32:C0:T0:L0）修改为自己的硬盘数值，（976768064 ）修改为你上一步换算出来的数值。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partedUtil setptbl /dev/disks/mpx.vmhba32\:C0\:T0\:L0 gpt <span class="string">&quot;1 2048 976768064</span></span><br><span class="line"><span class="string"> AA31E02A400F11DB9590000C2911D1B8 0&quot;</span></span><br></pre></td></tr></table></figure><p>8、挂载USB硬盘,注意这里（mpx.vmhba32:C0:T0:L0）<code>不仅要换为你硬盘的数值，并且还要在后面加个:1</code>，就是这个样子（mpx.vmhba32:C0:T0:L0:1）。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -C vmfs5 -S USB_Datastore /dev/disks/mpx.vmhba32\:C0\:T0\:L0:1</span><br></pre></td></tr></table></figure><p>9、ESXi后台查看存储，就可以看到存储器位置多了一个USB外接硬盘😁。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> VMware </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>K8S笔记整理</title>
       <link href="/2023/07/01/K8S%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/"/>
       <url>/2023/07/01/K8S%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</url>
@@ -73,7 +92,7 @@
       
         <tags>
             
-            <tag> ESXI </tag>
+            <tag> VMware </tag>
             
         </tags>
       
